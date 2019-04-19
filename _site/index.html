@@ -1,0 +1,189 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Red Hat User Experience Design">
+    <meta name="author" content="Red Hat UXD">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <title>AMQ Design Tracker</title>
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+    <!-- jQuery -->
+    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./assets/js/vendor/bootstrap.min.js"></script>
+    <!-- PatternFly JS -->
+    <script src="./assets/js/vendor/patternfly.min.js"></script>
+    <!-- Site JS -->
+    <script src="./assets/js/designSearch.js"></script>
+    <script src="./assets/js/designSort.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./">
+        <img alt="brand" src="./assets/img/icon.png" alt="UXD" width="25px">
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- uncomment to use the navigation -->
+         <li  class="active">
+          <a href="./">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <!--
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arias-haspopup="true" aria-expanded="false">Designs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li  >
+              <a href="./src/docs/designs/example1">Example 1</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/example2">Example 2</a>
+            </li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <style>
+      .hide { display: none; }
+    </style>
+    <!-- Toolbar -->
+    <div class="row toolbar-pf table-view-pf-toolbar" id="toolbar1">
+  <div class="col-sm-12">
+    <form class="toolbar-pf-actions">
+      <div class="form-group toolbar-pf-filter">
+        <label class="sr-only" for="filter">
+          Filter Designs
+        </label>
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" id="filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filter Designs <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a data-target="#" id="design">by Design</a>
+              </li>
+              <li>
+                <a data-target="#" id="designer">by Designer</a>
+              </li>
+            </ul>
+          </div>
+          <input type="text" class="form-control" placeholder="by Design..." autocomplete="off" id="designFilter" onkeyup="titleFunction()">
+          <input type="text" class="form-control hide" placeholder="by Designer..." autocomplete="off" id="designerFilter" onkeyup="designerFunction()">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            <h1>AMQ Design Tracker</h1>
+          </div>
+          <div class="col-sm-8 design-legend">
+  <ul class="status-list col-sm-3">
+    <li class="legend">LEGEND</li>
+  </ul>
+  <ul class="status-list col-sm-3">
+    <li class="light-blue light-blue-text">In Progress</li>
+    <li class="blue">Ready for Dev</li>
+  </ul>
+  <ul class="status-list col-sm-3">
+    <li class="green">UXD Verified</li>
+    <li class="orange">Needs Updates</li>
+  </ul>
+  <ul class="status-list col-sm-3">
+    <li class="purple">Not Yet Started</li>
+    <li class="red">Needs Review</li>
+  </ul>
+</div>
+
+        </div>
+      </div>
+      <div class="container-fluid">
+        <table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><a href="javascript:SortTable(0);" id="designTableTitle" class="sort">Design</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(1);" id="designTableType" class="sort">Type</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(2);" id="designTableDesigner" class="sort">Designer</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(3);" id="designTableStatus" class="sort">Status<a></a></a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(4, 'D', 'mdy');" id="designTableUpdate" class="sort">Last Updated</a></th>
+      <th style="text-align: left"><span id="designTableWILinks">Work Item Link</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/">InVision Design 1</a></td>
+      <td style="text-align: left">Wireframe</td>
+      <td style="text-align: left">Adam</td>
+      <td style="text-align: left">Ready for Dev</td>
+      <td style="text-align: left">07/12/2017</td>
+      <td style="text-align: left"><a href="https://github.com/rh-uxd/design-tracker-template/issues">RH-UXD Issue 1</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/">InVision Design 2</a></td>
+      <td style="text-align: left">Workflow</td>
+      <td style="text-align: left">Adam</td>
+      <td style="text-align: left">Needs Updates</td>
+      <td style="text-align: left">01/18/2017</td>
+      <td style="text-align: left"><a href="https://github.com/rh-uxd/design-tracker-template/issues">RH-UXD Issue 2</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/">InVision Design 3</a></td>
+      <td style="text-align: left">Wireframe</td>
+      <td style="text-align: left">UXD</td>
+      <td style="text-align: left">UXD Verified</td>
+      <td style="text-align: left">07/12/2017</td>
+      <td style="text-align: left"><a href="https://github.com/rh-uxd/design-tracker-template/issues">RH-UXD Issue 1</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/">InVision Design 4</a></td>
+      <td style="text-align: left">Visual</td>
+      <td style="text-align: left">RH-UXD</td>
+      <td style="text-align: left">In Progress</td>
+      <td style="text-align: left">01/18/2017</td>
+      <td style="text-align: left"><a href="https://github.com/rh-uxd/design-tracker-template/issues">RH-UXD Issue 2</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="all-markdown-written-using-this-cheatsheet">All markdown written using this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheatsheet</a>.</h6>
+
+      </div><!-- /.container -->
+    </section>
+    <script>
+    $("table").addClass("table table-striped table-bordered table-hover").attr("id", "designTable");
+    // $("table").attr("id", "myTable2");
+    $("table>tbody>tr>td>a").attr("target", "top");
+    $("table>tbody>tr>td:contains('Needs Updates')").addClass("orange");
+    $("table>tbody>tr>td:contains('Needs Review')").addClass("red");
+    $("table>tbody>tr>td:contains('UXD Verified')").addClass("green");
+    $("table>tbody>tr>td:contains('Ready for Dev')").addClass("blue");
+    $("table>tbody>tr>td:contains('In Progress')").addClass("light-blue");
+    $("table>tbody>tr>td:contains('Not Yet Started')").addClass("purple");
+    </script>
+    
+</html>
+

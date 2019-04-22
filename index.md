@@ -10,6 +10,6 @@ relative_path: ./
 | [InVision Design 1](https://redhat.invisionapp.com/)                 | Wireframe             | Haley                    | Ready for Dev           | 07/12/2017        | [RH-UXD Issue 1](https://github.com/rh-uxd/design-tracker-template/issues)
 | [InVision Design 2](https://redhat.invisionapp.com/)                 | Workflow              | April                    | Needs Updates           | 01/18/2017        | [RH-UXD Issue 2](https://github.com/rh-uxd/design-tracker-template/issues)
 | [InVision Design 3](https://redhat.invisionapp.com/)                 | Wireframe             | UXD                     | UXD Verified           | 07/12/2017        | [RH-UXD Issue 1](https://github.com/rh-uxd/design-tracker-template/issues)
-| [InVision Design 4](https://redhat.invisionapp.com/)                 | Visual                | RH-UXD                  | In Progress            | 01/18/2017        | [RH-UXD Issue 2](https://github.com/rh-uxd/design-tracker-template/issues)
+| AMQ Console Competitor researches                 | Research                | Haley&April                  | UXD Verified            | 11/29/2018        | --
 
 ###### All markdown written using this [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).

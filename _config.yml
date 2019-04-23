@@ -1,4 +1,5 @@
-name: design-tracker-template
+theme: jekyll-theme-slate
+name: EnMasse UX Design Tracker
 markdown: kramdown
 sass:
   style: compressed
@@ -20,5 +21,4 @@ collections:
       path: "./src/docs"
       type: documents
     values:
-      author: "Red Hat UXD"
     layout: page

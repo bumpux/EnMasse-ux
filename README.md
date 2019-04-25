@@ -1,6 +1,6 @@
 # EnMasse UX Design Tracker
 
-Design resources for the [Syndesis](https://github.com/syndesisio/syndesis) project. Design tracker is hosted on github pages at https://enmasse.io/EnMasse-ux/
+Design resources for the [EnMasse](https://github.com/EnMasseProject) project. Design tracker is hosted on github pages at https://enmasse.io/EnMasse-ux/
 
 ## Installation
 

@@ -1,24 +1,24 @@
 theme: jekyll-theme-slate
-name: EnMasse UX Design Tracker
+name: Syndesis UX Design Tracker
 markdown: kramdown
 sass:
-  style: compressed
+    style: compressed
 exclude: [
-  "deploy",
-  "gemfile",
-  "Gemfile.lock",
-  "package.json",
-  "gulpfile.js",
-  "node_modules",
-  "_site"
-]
+    "deploy",
+    "gemfile",
+    "Gemfile.lock",
+    "package.json",
+    "gulpfile.js",
+    "node_modules",
+    "_site"
+    ]
 collections:
-  documents_collection:
-    output: true
-    permalink: /:collection/:name
-    defaults:
-    scope:
-      path: "./src/docs"
-      type: documents
-    values:
-    layout: page
+    documents_collection:
+        output: true
+        permalink: /:collection/:name
+        defaults:
+        scope:
+            path: "./src/docs"
+            type: documents
+        values:
+        layout: page

@@ -1,6 +1,6 @@
-# EnMasse-ux
+# Syndesis UX Design Tracker
 
-Design resources for the [EnMasse](https://github.com/EnMasseProject/enmasse) project. Design tracker is hosted on github pages at https://enmasse.io/EnMasse-ux/
+Design resources for the [Syndesis](https://github.com/syndesisio/syndesis) project. Design tracker is hosted on github pages at https://syndesisio.github.io/syndesis-ux/
 
 ## Installation
 
@@ -46,5 +46,3 @@ This installation requires that you have Ruby, Node, Gem, Jekyll and Gulp instal
 - `gulp cleanVendors`
   - This will remove just the vendor files that were copied over during the `gulp` process.
   - Run `gulp` to copy a clean set of vendor files back to your directories.
-
-

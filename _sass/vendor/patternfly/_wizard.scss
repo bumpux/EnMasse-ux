@@ -52,14 +52,6 @@
           width: 14em;
           &:hover {
             text-decoration: none;
-            background-color: $color-pf-black-200;
-          }
-          &:focus {
-            //corrects odd behavior when hover and focus are combined.
-            text-decoration: none;
-            span {
-              text-decoration: underline;
-            }
           }
         }
         &.active {
